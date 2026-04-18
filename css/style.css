@@ -2091,3 +2091,295 @@ strong {
     padding: 12px 20px;
   }
 }
+
+/* =====================================================================
+   ABOUT DIAGRAM (refreshed) — radial dashed rays + center KPI circle
+===================================================================== */
+.section-about__content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 96px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.section-about__diagram {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 0 auto;
+}
+.about-diagram__svg {
+  position: absolute;
+  inset: 0;
+  width: 440px;
+  height: 440px;
+  pointer-events: none;
+  z-index: 0;
+}
+.about-diagram__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C9A227 0%, #E6BF44 100%);
+  box-shadow: 0 24px 56px rgba(201,162,39,0.42), 0 0 0 10px rgba(201,162,39,0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-navy);
+  z-index: 3;
+}
+.about-diagram__center-eyebrow {
+  font-size: 11px;
+  color: var(--color-navy);
+  font-weight: var(--weight-bold);
+  margin-bottom: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.about-diagram__center-title {
+  font-size: 26px;
+  line-height: 1.25;
+  font-weight: var(--weight-black);
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+}
+.about-diagram__pill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: var(--color-white);
+  color: var(--color-red);
+  border: 1.5px solid rgba(201,162,39,0.25);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: var(--weight-xbold);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+  white-space: nowrap;
+  z-index: 2;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.about-diagram__pill:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold);
+  box-shadow: 0 14px 40px rgba(201,162,39,0.3);
+}
+.about-diagram__pill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-red);
+}
+.about-diagram__pill-label {
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+}
+.about-diagram__pill--ad      { top: -8px;  left: 50%; transform: translateX(-50%); }
+.about-diagram__pill--seo     { top: 70px;  right: -10px; }
+.about-diagram__pill--product { bottom: 70px; right: -20px; }
+.about-diagram__pill--crm     { bottom: 70px; left: -20px; }
+.about-diagram__pill--report  { top: 70px;  left: -20px; }
+
+@media (max-width: 1023px) {
+  .section-about__content {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .section-about__diagram { width: 360px; height: 360px; }
+  .about-diagram__svg { width: 360px; height: 360px; }
+  .about-diagram__center { width: 168px; height: 168px; }
+  .about-diagram__center-title { font-size: 22px; }
+}
+
+@media (max-width: 768px) {
+  .section-about__diagram { width: 300px; height: 300px; }
+  .about-diagram__svg { width: 300px; height: 300px; }
+  .about-diagram__center { width: 140px; height: 140px; }
+  .about-diagram__center-title { font-size: 18px; }
+  .about-diagram__center-eyebrow { font-size: 10px; }
+  .about-diagram__pill { font-size: 12px; padding: 8px 14px; gap: 6px; }
+  .about-diagram__pill--seo     { top: 40px; right: -4px; }
+  .about-diagram__pill--product { bottom: 40px; right: -10px; }
+  .about-diagram__pill--crm     { bottom: 40px; left: -10px; }
+  .about-diagram__pill--report  { top: 40px; left: -4px; }
+}
+
+/* =====================================================================
+   CASES — image-less redesign (2x2 grid card)
+===================================================================== */
+.section-cases__list {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 32px !important;
+}
+.cases-card {
+  background: var(--color-white);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform .24s cubic-bezier(.3,.16,.17,1.13), box-shadow .22s;
+}
+.cases-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(201,162,39,0.26);
+}
+.cases-card__visual {
+  position: relative;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-red);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-palegray);
+}
+.cases-card__visual--aqua {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(201,162,39,0.18) 0%, transparent 55%),
+    linear-gradient(135deg, #FFF9E8 0%, #FFFDF5 60%, #FFFFFF 100%);
+}
+.cases-card__visual--agri {
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(201,162,39,0.22) 0%, transparent 55%),
+    linear-gradient(135deg, #FFFAEC 0%, #FFF7D9 70%, #FFFFFF 100%);
+}
+.cases-card__visual--gift {
+  background:
+    repeating-linear-gradient(45deg, rgba(201,162,39,0.1) 0 6px, transparent 6px 18px),
+    linear-gradient(135deg, #FFF9E8 0%, #FFFFFF 100%);
+}
+.cases-card__visual--circle {
+  background:
+    radial-gradient(circle at 60% 50%, rgba(201,162,39,0.25) 0%, transparent 60%),
+    linear-gradient(135deg, #FFFAEC 0%, #FFFFFF 100%);
+}
+.cases-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-family: var(--font-en);
+  font-size: 12px;
+  font-weight: var(--weight-xbold);
+  letter-spacing: 0.1em;
+  padding: 4px 14px;
+  border-radius: 100px;
+  box-shadow: 0 4px 12px rgba(200,16,46,0.3);
+  z-index: 4;
+}
+.cases-card__icon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-red);
+}
+.cases-card__body {
+  padding: 28px 26px 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--color-white);
+}
+.cases-card__title {
+  font-size: 18px;
+  font-weight: var(--weight-xbold);
+  color: var(--color-navy);
+  line-height: 1.5;
+  margin: 0;
+}
+.cases-card__stat {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-palegray);
+  border-bottom: 1px solid var(--color-palegray);
+  align-items: baseline;
+  margin: 0;
+}
+.cases-card__stat dt {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.cases-card__stat dd {
+  margin: 0;
+}
+.cases-card__stat-num {
+  font-family: var(--font-en);
+  font-size: 26px;
+  font-weight: var(--weight-black);
+  color: var(--color-red);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+}
+.cases-card__stat-unit {
+  font-family: var(--font-ja);
+  font-size: 12px;
+  color: var(--color-gray);
+  font-weight: var(--weight-bold);
+  margin-left: 4px;
+  letter-spacing: 0;
+}
+.cases-card__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--color-body);
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0;
+}
+.cases-card__desc-point {
+  margin: 0;
+}
+.cases-card__desc-point b {
+  color: var(--color-dblue);
+  font-weight: var(--weight-xbold);
+  margin-right: 2px;
+}
+.cases-card__desc-voice {
+  margin: 6px 0 0 0;
+  padding: 12px 14px;
+  background: var(--color-offwhite);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 4px;
+  color: var(--color-body);
+  font-size: 12px;
+  line-height: 1.75;
+  font-style: italic;
+}
+
+@media (max-width: 1023px) {
+  .section-cases__list {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .cases-card__visual { height: 120px; }
+}
+
+@media (max-width: 768px) {
+  .cases-card__body { padding: 22px 20px; gap: 14px; }
+  .cases-card__title { font-size: 16px; }
+  .cases-card__stat { grid-template-columns: 90px 1fr; }
+  .cases-card__stat-num { font-size: 22px; }
+  .cases-card__visual { height: 100px; }
+}

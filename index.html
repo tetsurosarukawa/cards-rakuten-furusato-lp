@@ -216,15 +216,68 @@
           <p>「ふるさと納税◯◯」キーワードと単体キーワードを並行運用する複合戦略、日別・時間帯別の精緻な予算配分、楽天仕様変更への即応——。ふるさと納税と楽天運用の両方を深く理解する、専門チームだからこそ実現できる運用です。</p>
         </div>
         <div class="section-about__diagram" aria-hidden="true">
-          <div class="section-about__diagram-center">
-            <span class="section-about__diagram-center-eyebrow">最上位KPI</span>
-            <span class="section-about__diagram-center-title">寄付額<br>最大化</span>
+          <svg class="about-diagram__svg" width="440" height="440" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="ripple-gradient1" cx="50%" cy="50%" r="80%">
+                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="#0B1F3A" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="ripple-gradient2" cx="50%" cy="50%" r="80%">
+                <stop offset="0%" stop-color="#C9A227" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#0B1F3A" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="220" cy="220" r="100" fill="url(#ripple-gradient1)"/>
+            <circle cx="220" cy="220" r="130" fill="none" stroke="url(#ripple-gradient2)" stroke-width="2" opacity="0.2"/>
+            <circle cx="220" cy="220" r="165" fill="none" stroke="url(#ripple-gradient2)" stroke-width="1.5" opacity="0.12"/>
+            <g opacity="0.28">
+              <line x1="220" y1="110" x2="220" y2="90" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/>
+              <line x1="220" y1="330" x2="220" y2="350" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/>
+              <line x1="110" y1="220" x2="90" y2="220" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/>
+              <line x1="330" y1="220" x2="350" y2="220" stroke="#C9A227" stroke-width="2" stroke-linecap="round"/>
+            </g>
+            <g stroke="#C9A227" stroke-width="1.5" stroke-dasharray="6,7" opacity="0.45">
+              <line x1="220" y1="220" x2="220" y2="40"/>
+              <line x1="220" y1="220" x2="380.79" y2="111.08"/>
+              <line x1="220" y1="220" x2="348.92" y2="338.92"/>
+              <line x1="220" y1="220" x2="91.08" y2="338.92"/>
+              <line x1="220" y1="220" x2="59.21" y2="111.08"/>
+            </g>
+          </svg>
+          <div class="about-diagram__center">
+            <span class="about-diagram__center-eyebrow">最上位KPI</span>
+            <span class="about-diagram__center-title">寄付額<br>最大化</span>
           </div>
-          <div class="section-about__diagram-item section-about__diagram-item--1">広告運用</div>
-          <div class="section-about__diagram-item section-about__diagram-item--2">SEO</div>
-          <div class="section-about__diagram-item section-about__diagram-item--3">返礼品企画</div>
-          <div class="section-about__diagram-item section-about__diagram-item--4">CRM</div>
-          <div class="section-about__diagram-item section-about__diagram-item--5">レポーティング</div>
+          <div class="about-diagram__pill about-diagram__pill--ad">
+            <span class="about-diagram__pill-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.2 7.5L13.5 4.2V13.8L3.2 10.5V7.5Z"/><path d="M3.2 7.5V10.5"/><path d="M2 14.3L3.7 11.4"/></svg>
+            </span>
+            <span class="about-diagram__pill-label">広告運用</span>
+          </div>
+          <div class="about-diagram__pill about-diagram__pill--seo">
+            <span class="about-diagram__pill-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4.3"/><line x1="12.2" y1="12.2" x2="16" y2="16"/></svg>
+            </span>
+            <span class="about-diagram__pill-label">SEO</span>
+          </div>
+          <div class="about-diagram__pill about-diagram__pill--product">
+            <span class="about-diagram__pill-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="12" height="12" rx="2"/><polyline points="6.3 9.5 8.2 12 12 7.5"/></svg>
+            </span>
+            <span class="about-diagram__pill-label">返礼品企画</span>
+          </div>
+          <div class="about-diagram__pill about-diagram__pill--crm">
+            <span class="about-diagram__pill-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 15S2.5 10.1 2.5 6.9A3.4 3.4 0 0 1 8.2 4.1a3.3 3.3 0 0 1 .8 1.1 3.3 3.3 0 0 1 .8-1.1 3.4 3.4 0 0 1 5.7 2.8C15.5 10.1 9 15 9 15z"/></svg>
+            </span>
+            <span class="about-diagram__pill-label">CRM</span>
+          </div>
+          <div class="about-diagram__pill about-diagram__pill--report">
+            <span class="about-diagram__pill-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="2.7" height="5"/><rect x="7.65" y="3" width="2.7" height="9.5"/><rect x="12.3" y="10" width="2.7" height="2.5"/></svg>
+            </span>
+            <span class="about-diagram__pill-label">レポーティング</span>
+          </div>
         </div>
       </div>
     </div>
@@ -353,101 +406,119 @@
         <p class="section-eyebrow section-eyebrow--light">Results</p>
         <h2 class="section-title section-title--light">数字で語る、<br>支援実績。</h2>
       </div>
-      <ul class="section-cases__list">
-        <li class="section-cases__case">
-          <div class="section-cases__img-wrap">
-            <img src="https://images.unsplash.com/photo-1559589688-6a3e2d8f4e87?auto=format&fit=crop&w=720&q=80" alt="水産返礼品のイメージ" class="section-cases__img" loading="lazy">
-            <span class="section-cases__badge">Case 01</span>
+      <div class="section-cases__list">
+        <article class="cases-card">
+          <div class="cases-card__visual cases-card__visual--aqua">
+            <span class="cases-card__badge">Case 01</span>
+            <span class="cases-card__icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22c4-8 12-10 20-10 6 0 10 3 12 6-2 3-6 6-12 6-8 0-16-2-20-2z"/>
+                <path d="M6 22c2 2 4 4 4 6"/>
+                <path d="M26 22l8-4"/>
+                <path d="M26 22l8 4"/>
+                <circle cx="30" cy="20" r="1.2" fill="currentColor"/>
+              </svg>
+            </span>
           </div>
-          <div class="section-cases__case-content">
-            <h3 class="section-cases__case-title">北海道A町・水産返礼品（いくら/サーモン）</h3>
-            <div class="section-cases__stats">
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">全体ROAS</span>
-                <span class="section-cases__stat-value">1,358<span>%</span></span>
-              </div>
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">KW消化率</span>
-                <span class="section-cases__stat-value">63.5-88.6<span>%</span></span>
-              </div>
+          <div class="cases-card__body">
+            <h3 class="cases-card__title">北海道A町・水産返礼品（いくら／サーモン）</h3>
+            <dl class="cases-card__stat">
+              <dt>全体ROAS</dt>
+              <dd><span class="cases-card__stat-num">1,358<span class="cases-card__stat-unit">%</span></span></dd>
+              <dt>KW消化率</dt>
+              <dd><span class="cases-card__stat-num">63.5–88.6<span class="cases-card__stat-unit">%</span></span></dd>
+            </dl>
+            <div class="cases-card__desc">
+              <p class="cases-card__desc-point"><b>広告戦略：</b>RPP広告中心、ROAS 718%〜2,000%超</p>
+              <p class="cases-card__desc-point"><b>施策ポイント：</b>「ふるさと納税 いくら」等の指名KW＋「いくら」「サーモン」の単体KW並行展開</p>
+              <p class="cases-card__desc-voice">「季節ごとの戦略切り替えが的確で、寄付額が読める運用になった。」</p>
             </div>
-            <ul class="section-cases__case-list">
-              <li><strong>広告戦略：</strong>RPP広告中心、ROAS 718%〜2,000%超</li>
-              <li><strong>施策ポイント：</strong>「ふるさと納税 いくら」等の指名KW＋「いくら」「サーモン」の単体KW並行展開</li>
-            </ul>
-            <blockquote class="section-cases__quote">「季節ごとの戦略切り替えが的確で、寄付額が読める運用になった。」</blockquote>
           </div>
-        </li>
-        <li class="section-cases__case">
-          <div class="section-cases__img-wrap">
-            <img src="https://images.unsplash.com/photo-1580554530778-ca36943938b2?auto=format&fit=crop&w=720&q=80" alt="畜産・米返礼品のイメージ" class="section-cases__img" loading="lazy">
-            <span class="section-cases__badge">Case 02</span>
+        </article>
+
+        <article class="cases-card">
+          <div class="cases-card__visual cases-card__visual--agri">
+            <span class="cases-card__badge">Case 02</span>
+            <span class="cases-card__icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 38V14"/>
+                <path d="M22 14c-4 0-8-4-8-8 4 0 8 4 8 8z"/>
+                <path d="M22 22c-4 0-8-4-8-8 4 0 8 4 8 8z"/>
+                <path d="M22 30c-4 0-8-4-8-8 4 0 8 4 8 8z"/>
+                <path d="M22 14c4 0 8-4 8-8-4 0-8 4-8 8z"/>
+                <path d="M22 22c4 0 8-4 8-8-4 0-8 4-8 8z"/>
+                <path d="M22 30c4 0 8-4 8-8-4 0-8 4-8 8z"/>
+              </svg>
+            </span>
           </div>
-          <div class="section-cases__case-content">
-            <h3 class="section-cases__case-title">岩手県B市・畜産／米返礼品</h3>
-            <div class="section-cases__stats">
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">全体ROAS</span>
-                <span class="section-cases__stat-value">1,358<span>%</span></span>
-              </div>
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">BigKW出稿率</span>
-                <span class="section-cases__stat-value">88.6<span>%</span></span>
-              </div>
+          <div class="cases-card__body">
+            <h3 class="cases-card__title">岩手県B市・畜産／米返礼品</h3>
+            <dl class="cases-card__stat">
+              <dt>全体ROAS</dt>
+              <dd><span class="cases-card__stat-num">1,358<span class="cases-card__stat-unit">%</span></span></dd>
+              <dt>BigKW出稿率</dt>
+              <dd><span class="cases-card__stat-num">88.6<span class="cases-card__stat-unit">%</span></span></dd>
+            </dl>
+            <div class="cases-card__desc">
+              <p class="cases-card__desc-point"><b>主要施策：</b>ビッグキーワード出稿率88.6%維持、12時／18時／20時／22時のモニタリング体制</p>
+              <p class="cases-card__desc-point"><b>施策ポイント：</b>寄付額最大化を軸にした精緻な予算配分管理</p>
             </div>
-            <ul class="section-cases__case-list">
-              <li><strong>主要施策：</strong>ビッグキーワード出稿率88.6%維持、12時/18時/20時/22時のモニタリング体制</li>
-              <li><strong>施策ポイント：</strong>寄付額最大化を軸にした精緻な予算配分管理</li>
-            </ul>
           </div>
-        </li>
-        <li class="section-cases__case">
-          <div class="section-cases__img-wrap">
-            <img src="https://images.unsplash.com/photo-1564759298141-cef86f51d4d4?auto=format&fit=crop&w=720&q=80" alt="複合カテゴリ返礼品のイメージ" class="section-cases__img" loading="lazy">
-            <span class="section-cases__badge">Case 03</span>
+        </article>
+
+        <article class="cases-card">
+          <div class="cases-card__visual cases-card__visual--gift">
+            <span class="cases-card__badge">Case 03</span>
+            <span class="cases-card__icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="18" width="28" height="18" rx="2"/>
+                <rect x="8" y="12" width="28" height="8" rx="1.5"/>
+                <path d="M22 12v24"/>
+                <path d="M14 9c0 2 2 5 8 9-2-7-5-11-8-9zM30 9c0 2-2 5-8 9 2-7 5-11 8-9z"/>
+              </svg>
+            </span>
           </div>
-          <div class="section-cases__case-content">
-            <h3 class="section-cases__case-title">宮城県C市・複合カテゴリ（米・クラフトビール・家電等）</h3>
-            <div class="section-cases__stats">
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">年間広告予算</span>
-                <span class="section-cases__stat-value">6,500<span>万円規模</span></span>
-              </div>
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">対応カテゴリ</span>
-                <span class="section-cases__stat-value">多<span>カテゴリ</span></span>
-              </div>
+          <div class="cases-card__body">
+            <h3 class="cases-card__title">宮城県C市・複合カテゴリ（米・クラフトビール・家電等）</h3>
+            <dl class="cases-card__stat">
+              <dt>年間広告予算</dt>
+              <dd><span class="cases-card__stat-num">6,500<span class="cases-card__stat-unit">万円規模</span></span></dd>
+              <dt>展開カテゴリ</dt>
+              <dd><span class="cases-card__stat-num">多<span class="cases-card__stat-unit">カテゴリ</span></span></dd>
+            </dl>
+            <div class="cases-card__desc">
+              <p class="cases-card__desc-point"><b>運用体制：</b>DMO経由でのプロモーション支援</p>
+              <p class="cases-card__desc-point"><b>施策ポイント：</b>複数カテゴリーを横断したポートフォリオ最適化</p>
             </div>
-            <ul class="section-cases__case-list">
-              <li><strong>運用体制：</strong>DMO経由でのプロモーション支援</li>
-              <li><strong>施策ポイント：</strong>複数カテゴリーを横断したポートフォリオ最適化</li>
-            </ul>
           </div>
-        </li>
-        <li class="section-cases__case">
-          <div class="section-cases__img-wrap">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=720&q=80" alt="北海道の自治体のイメージ" class="section-cases__img" loading="lazy">
-            <span class="section-cases__badge">Case 04</span>
+        </article>
+
+        <article class="cases-card">
+          <div class="cases-card__visual cases-card__visual--circle">
+            <span class="cases-card__badge">Case 04</span>
+            <span class="cases-card__icon" aria-hidden="true">
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="22" cy="22" r="16"/>
+                <path d="M22 12v10l7 4"/>
+                <path d="M8 24a14 14 0 0 0 22-6" opacity="0.5"/>
+              </svg>
+            </span>
           </div>
-          <div class="section-cases__case-content">
-            <h3 class="section-cases__case-title">北海道D市・継続支援</h3>
-            <div class="section-cases__stats">
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">運用体制</span>
-                <span class="section-cases__stat-value">月次<span>定例</span></span>
-              </div>
-              <div class="section-cases__stat">
-                <span class="section-cases__stat-label">対応</span>
-                <span class="section-cases__stat-value">機動<span>的</span></span>
-              </div>
+          <div class="cases-card__body">
+            <h3 class="cases-card__title">北海道D市・継続支援</h3>
+            <dl class="cases-card__stat">
+              <dt>運用体制</dt>
+              <dd><span class="cases-card__stat-num">月次<span class="cases-card__stat-unit">定例</span></span></dd>
+              <dt>対応</dt>
+              <dd><span class="cases-card__stat-num">機動<span class="cases-card__stat-unit">的</span></span></dd>
+            </dl>
+            <div class="cases-card__desc">
+              <p class="cases-card__desc-point"><b>運用体制：</b>月次定例会議による継続的な運用改善</p>
+              <p class="cases-card__desc-point"><b>施策ポイント：</b>プラットフォーム仕様変更への機動的対応</p>
             </div>
-            <ul class="section-cases__case-list">
-              <li><strong>運用体制：</strong>月次定例会議による継続的な運用改善</li>
-              <li><strong>施策ポイント：</strong>プラットフォーム仕様変更への機動的対応</li>
-            </ul>
           </div>
-        </li>
-      </ul>
+        </article>
+      </div>
       <p class="section-cases__note">※ 自治体名は守秘義務により匿名表記しています。詳細事例は面談にて開示可能です。</p>
     </div>
   </section>
