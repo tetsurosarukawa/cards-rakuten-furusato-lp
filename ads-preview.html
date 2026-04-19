@@ -3,156 +3,389 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>CARDS Meta広告クリエイティブ｜gpt-image-1.5</title>
+<title>CARDS Meta広告クリエイティブ v2</title>
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0B1F3A;--dblue:#143A6B;--red:#C8102E;--gold:#C9A227;
+  --navy:#0B1F3A;--dblue:#143A6B;--red:#C8102E;--gold:#C9A227;--gold-light:#E6BF44;
   --off:#F7F8FB;--pale:#E6E9EF;--body:#2B3A55;--gray:#6B7280;
+  --font-ja:'Noto Sans JP',sans-serif;
+  --font-serif:'Noto Serif JP',serif;
+  --font-en:'Inter',sans-serif;
 }
-body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--off);color:var(--body);line-height:1.7;padding:48px 24px 96px}
-.wrap{max-width:1120px;margin:0 auto}
-header{text-align:center;margin-bottom:56px}
-.eyebrow{font-family:'Inter',sans-serif;color:var(--red);font-weight:700;letter-spacing:0.2em;font-size:12px;margin-bottom:12px}
-h1{font-size:36px;font-weight:900;color:var(--navy);line-height:1.3;margin-bottom:16px}
-.lead{color:var(--gray);font-size:15px;max-width:720px;margin:0 auto}
-.group{margin-bottom:72px}
-.group-title{font-size:18px;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--pale)}
-.group-title .tag{background:var(--navy);color:#fff;font-family:'Inter',sans-serif;font-size:11px;padding:4px 10px;border-radius:100px;letter-spacing:0.1em}
-.grid{display:grid;gap:32px}
-.grid-1x1{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.grid-4x5{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.grid-9x16{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(11,31,58,0.08);transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(11,31,58,0.16)}
-.card-image{position:relative;background:var(--navy);display:block}
-.card-image img{width:100%;height:auto;display:block}
-.card-meta{padding:20px 22px}
-.card-title{font-weight:900;color:var(--navy);font-size:15px;margin-bottom:6px}
-.card-desc{font-size:12px;color:var(--gray);line-height:1.7}
-.card-spec{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
-.spec{font-family:'Inter',sans-serif;font-size:10px;padding:3px 8px;border-radius:100px;background:var(--off);color:var(--navy);font-weight:700;letter-spacing:0.04em}
-.spec--fmt{background:var(--navy);color:#fff}
-.spec--size{background:rgba(201,162,39,0.15);color:var(--gold)}
-footer{margin-top:80px;padding-top:32px;border-top:1px solid var(--pale);text-align:center;color:var(--gray);font-size:12px}
-footer a{color:var(--navy);font-weight:700}
-.dl{display:inline-block;margin-left:12px;color:var(--red);font-weight:700;font-size:12px;text-decoration:none}
-.dl:hover{text-decoration:underline}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-ja);background:#0f1422;color:#fff;line-height:1.7;padding:64px 24px 120px}
+.wrap{max-width:1200px;margin:0 auto}
+
+/* PAGE HEADER */
+.page-head{text-align:center;margin-bottom:72px}
+.page-eyebrow{font-family:var(--font-en);color:var(--gold);font-weight:700;letter-spacing:0.28em;font-size:11px;margin-bottom:16px;text-transform:uppercase}
+.page-head h1{font-size:42px;font-weight:900;color:#fff;line-height:1.25;margin-bottom:16px;letter-spacing:-0.02em}
+.page-head .lead{color:rgba(255,255,255,0.6);font-size:14px;max-width:720px;margin:0 auto}
+
+/* GROUP */
+.group{margin-bottom:96px}
+.group-title{display:flex;align-items:center;gap:14px;margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.group-title .tag{background:var(--gold);color:var(--navy);font-family:var(--font-en);font-size:11px;padding:4px 10px;border-radius:100px;letter-spacing:0.1em;font-weight:800}
+.group-title h2{font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.01em}
+.group-title .meta{margin-left:auto;color:rgba(255,255,255,0.4);font-size:11px;font-family:var(--font-en);letter-spacing:0.08em}
+
+/* GRID */
+.grid{display:grid;gap:40px}
+.grid-1x1{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.grid-4x5{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid-9x16{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+/* CARD WRAPPER */
+.ad-card{display:flex;flex-direction:column;gap:14px}
+.ad-card__preview{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.35),0 2px 8px rgba(0,0,0,0.2);aspect-ratio:var(--ratio);background:var(--navy)}
+.ad-card__preview--1x1{--ratio:1/1}
+.ad-card__preview--4x5{--ratio:4/5}
+.ad-card__preview--9x16{--ratio:9/16}
+.ad-card__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ad-card__shade{position:absolute;inset:0}
+.ad-card__content{position:absolute;inset:0;display:flex;flex-direction:column;padding:9%;color:#fff}
+.ad-card__meta-row{padding:2px 2px 0 2px}
+.ad-card__label{font-weight:900;color:#fff;font-size:14px;margin-bottom:4px}
+.ad-card__desc{font-size:11px;color:rgba(255,255,255,0.55);line-height:1.7}
+.ad-card__chips{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;align-items:center}
+.chip{font-family:var(--font-en);font-size:10px;padding:3px 9px;border-radius:100px;letter-spacing:0.06em;font-weight:700}
+.chip--fmt{background:rgba(201,162,39,0.15);color:var(--gold-light)}
+.chip--size{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.6)}
+.chip--dl{background:var(--red);color:#fff;text-decoration:none;transition:background .2s}
+.chip--dl:hover{background:#A00D25}
+
+/* ================================================================
+   CREATIVE A1 — Big Number
+================================================================ */
+.cr-a1 .ad-card__shade{background:linear-gradient(180deg,rgba(11,31,58,0.0) 0%,rgba(11,31,58,0.0) 35%,rgba(11,31,58,0.7) 65%,rgba(11,31,58,0.95) 100%)}
+.cr-a1__top{display:flex;justify-content:space-between;align-items:flex-start}
+.cr-a1__brand{font-family:var(--font-en);font-weight:900;font-size:15px;letter-spacing:0.06em;color:#fff}
+.cr-a1__eyebrow{font-family:var(--font-en);font-weight:700;font-size:9px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase}
+.cr-a1__bottom{margin-top:auto;text-align:center}
+.cr-a1__stat{font-family:var(--font-en);font-size:64px;font-weight:900;line-height:1;color:var(--gold);letter-spacing:-0.03em;margin-bottom:12px}
+.cr-a1__stat-unit{font-size:24px;color:#fff;margin-left:4px;vertical-align:top;line-height:1}
+.cr-a1__headline{font-weight:900;font-size:18px;line-height:1.5;margin-bottom:8px;letter-spacing:-0.01em}
+.cr-a1__sub{font-size:10px;color:rgba(255,255,255,0.7);letter-spacing:0.1em;font-family:var(--font-en);text-transform:uppercase}
+
+/* ================================================================
+   CREATIVE A2 — Portrait + Testimonial
+================================================================ */
+.cr-a2 .ad-card__bg{object-position:center 30%}
+.cr-a2 .ad-card__shade{background:linear-gradient(100deg,rgba(11,31,58,0.85) 0%,rgba(11,31,58,0.35) 45%,rgba(11,31,58,0.1) 100%)}
+.cr-a2__eyebrow{font-family:var(--font-en);font-weight:700;font-size:10px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.cr-a2__headline{font-family:var(--font-serif);font-weight:900;font-size:24px;line-height:1.5;max-width:62%;letter-spacing:-0.01em}
+.cr-a2__quote{font-family:var(--font-serif);font-size:46px;line-height:1;color:var(--gold);opacity:0.5;margin-bottom:-14px}
+.cr-a2__bottom{margin-top:auto}
+.cr-a2__stat-row{display:flex;align-items:baseline;gap:8px}
+.cr-a2__stat{font-family:var(--font-en);font-weight:900;font-size:36px;color:var(--gold);line-height:1;letter-spacing:-0.02em}
+.cr-a2__stat-label{font-size:10px;color:rgba(255,255,255,0.75);letter-spacing:0.1em;text-transform:uppercase}
+.cr-a2__brand{margin-top:12px;font-family:var(--font-en);font-weight:800;letter-spacing:0.06em;font-size:12px;color:#fff}
+
+/* ================================================================
+   CREATIVE B1 — Luxury Food
+================================================================ */
+.cr-b1 .ad-card__shade{background:linear-gradient(180deg,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.0) 30%,rgba(0,0,0,0.0) 45%,rgba(11,31,58,0.75) 70%,rgba(11,31,58,0.98) 100%)}
+.cr-b1__top-eyebrow{display:inline-block;background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-size:10px;letter-spacing:0.18em;padding:6px 12px;border-radius:100px;font-weight:700;text-transform:uppercase;font-family:var(--font-en)}
+.cr-b1__bottom{margin-top:auto}
+.cr-b1__headline{font-weight:900;font-size:22px;line-height:1.45;margin-bottom:16px;letter-spacing:-0.01em}
+.cr-b1__headline em{color:var(--gold);font-style:normal}
+.cr-b1__stamp{display:inline-flex;align-items:baseline;gap:4px;padding:7px 14px;background:var(--gold);color:var(--navy);border-radius:100px;font-family:var(--font-en);font-weight:900;font-size:13px;letter-spacing:-0.01em;margin-bottom:14px}
+.cr-b1__stamp small{font-size:9px;letter-spacing:0.15em;margin-right:4px;text-transform:uppercase}
+.cr-b1__cta{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(255,255,255,0.12)}
+.cr-b1__brand{font-family:var(--font-en);font-weight:900;font-size:12px;letter-spacing:0.08em}
+.cr-b1__brand-sub{display:block;font-size:9px;color:rgba(255,255,255,0.55);font-family:var(--font-ja);letter-spacing:0.04em;margin-top:2px;font-weight:500}
+.cr-b1__arrow{width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:var(--navy);font-family:var(--font-en);font-weight:900}
+
+/* ================================================================
+   CREATIVE B2 — Abstract Chart
+================================================================ */
+.cr-b2 .ad-card__shade{background:linear-gradient(180deg,rgba(11,31,58,0.15) 0%,rgba(11,31,58,0.05) 60%,rgba(11,31,58,0.9) 100%)}
+.cr-b2__top{text-align:left}
+.cr-b2__label{font-family:var(--font-en);font-size:10px;letter-spacing:0.25em;color:rgba(255,255,255,0.65);text-transform:uppercase;font-weight:700}
+.cr-b2__center{margin:auto 0;text-align:center}
+.cr-b2__multiplier{font-family:var(--font-en);font-weight:900;font-size:110px;line-height:1;color:var(--gold);letter-spacing:-0.05em;display:inline-block;text-shadow:0 4px 32px rgba(201,162,39,0.25)}
+.cr-b2__mult-prefix{font-size:44px;font-weight:400;color:rgba(255,255,255,0.8);vertical-align:40%;margin-right:-8px}
+.cr-b2__bottom{margin-top:auto}
+.cr-b2__headline{font-weight:700;font-size:16px;line-height:1.6;letter-spacing:0.01em;margin-bottom:8px}
+.cr-b2__brand-line{display:flex;align-items:center;gap:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.1)}
+.cr-b2__brand{font-family:var(--font-en);font-weight:900;font-size:12px;letter-spacing:0.08em}
+.cr-b2__brand-sub{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.04em}
+
+/* ================================================================
+   CREATIVE C1 — Vertical Consultant
+================================================================ */
+.cr-c1 .ad-card__bg{object-position:center 10%}
+.cr-c1 .ad-card__shade{background:linear-gradient(180deg,rgba(11,31,58,0.7) 0%,rgba(11,31,58,0.0) 25%,rgba(11,31,58,0.0) 50%,rgba(11,31,58,0.8) 82%,rgba(11,31,58,0.98) 100%)}
+.cr-c1__top{text-align:left}
+.cr-c1__eyebrow{display:inline-block;padding:5px 12px;background:rgba(255,255,255,0.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:100px;font-family:var(--font-en);font-size:9px;letter-spacing:0.2em;font-weight:700;text-transform:uppercase;color:#fff}
+.cr-c1__bottom{margin-top:auto;text-align:center}
+.cr-c1__headline{font-weight:900;font-size:24px;line-height:1.45;letter-spacing:-0.015em;margin-bottom:20px}
+.cr-c1__headline em{color:var(--gold);font-style:normal;font-size:1.15em}
+.cr-c1__cta{display:inline-flex;align-items:center;gap:6px;padding:13px 28px;background:var(--red);color:#fff;border-radius:100px;font-weight:900;font-size:14px;letter-spacing:0.02em;box-shadow:0 8px 24px rgba(200,16,46,0.4);margin-bottom:14px}
+.cr-c1__brand{font-family:var(--font-en);font-weight:900;font-size:12px;letter-spacing:0.08em}
+.cr-c1__brand-sub{display:block;margin-top:2px;font-size:9px;color:rgba(255,255,255,0.55);font-family:var(--font-ja);letter-spacing:0.04em;font-weight:500}
+
+/* ================================================================
+   CREATIVE C2 — Vertical Countryside
+================================================================ */
+.cr-c2 .ad-card__shade{background:linear-gradient(180deg,rgba(11,31,58,0.0) 0%,rgba(11,31,58,0.0) 40%,rgba(11,31,58,0.75) 75%,rgba(11,31,58,0.98) 100%)}
+.cr-c2__top{text-align:left}
+.cr-c2__eyebrow{font-family:var(--font-en);font-size:10px;letter-spacing:0.25em;color:rgba(255,255,255,0.95);text-transform:uppercase;font-weight:700}
+.cr-c2__bottom{margin-top:auto;text-align:center}
+.cr-c2__headline{font-family:var(--font-serif);font-weight:900;font-size:26px;line-height:1.45;letter-spacing:-0.01em;margin-bottom:16px}
+.cr-c2__headline em{color:var(--gold);font-style:normal}
+.cr-c2__divider{width:36px;height:2px;background:var(--gold);margin:0 auto 14px auto}
+.cr-c2__brand{font-family:var(--font-en);font-weight:900;font-size:14px;letter-spacing:0.08em}
+.cr-c2__brand-sub{display:block;margin-top:4px;font-size:10px;color:rgba(255,255,255,0.6);font-family:var(--font-ja);letter-spacing:0.04em;font-weight:500}
+
+footer{margin-top:96px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08);text-align:center;color:rgba(255,255,255,0.4);font-size:11px;line-height:1.8}
+footer a{color:var(--gold);font-weight:700;text-decoration:none}
+
+@media (max-width:768px){
+  .page-head h1{font-size:28px}
+  .group{margin-bottom:64px}
+  .grid{gap:28px}
+  .cr-a1__stat{font-size:48px}
+  .cr-a1__headline{font-size:16px}
+  .cr-a2__headline{font-size:18px}
+  .cr-b1__headline{font-size:18px}
+  .cr-b2__multiplier{font-size:80px}
+  .cr-b2__mult-prefix{font-size:32px}
+  .cr-c1__headline{font-size:20px}
+  .cr-c2__headline{font-size:22px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <p class="eyebrow">META ADS CREATIVES</p>
-  <h1>Meta広告用クリエイティブ<br>（gpt-image-1.5 生成）</h1>
-  <p class="lead">株式会社CARDS「楽天ふるさと納税 専門運用支援」サービスの Feed／Reels／Stories 用広告画像 6パターン。1:1（Feed）・4:5（Feed縦長）・9:16（Reels/Stories）の3フォーマットで2案ずつ。</p>
+<header class="page-head">
+  <p class="page-eyebrow">Meta Ads Creatives — v2.0</p>
+  <h1>CARDS 広告クリエイティブ</h1>
+  <p class="lead">AIビジュアル × HTML精密オーバーレイ。gpt-image-1.5 で生成したプレミアム質感の下地に、日本語タイポグラフィを厳密にレイアウト。Feed／Reels／Stories の 3 フォーマット、計 6 パターン。</p>
 </header>
 
+<!-- ======== 1:1 FEED ======== -->
 <section class="group">
   <div class="group-title">
     <span class="tag">1:1</span>
-    Feed用（1024×1024）
+    <h2>Meta Feed（1080×1080）</h2>
+    <span class="meta">2 creatives · 1024×1024 base</span>
   </div>
   <div class="grid grid-1x1">
-    <article class="card">
-      <div class="card-image"><img src="assets/ads/ad-01-square-number.png" alt="1,358%数字訴求" loading="lazy"></div>
-      <div class="card-meta">
-        <p class="card-title">A1｜数字ドリブン型</p>
-        <p class="card-desc">大型数字「1,358%」単独訴求。第一想起をROAS実績に集中させるパターン。</p>
-        <div class="card-spec">
-          <span class="spec spec--fmt">Meta Feed</span>
-          <span class="spec spec--size">1024×1024</span>
-          <a href="assets/ads/ad-01-square-number.png" download class="dl">↓ DL</a>
+
+    <!-- A1 -->
+    <div class="ad-card">
+      <div class="ad-card__preview ad-card__preview--1x1 cr-a1">
+        <img src="assets/ads/v2-01-number-minimal.png" class="ad-card__bg" alt="">
+        <div class="ad-card__shade"></div>
+        <div class="ad-card__content">
+          <div class="cr-a1__top">
+            <span class="cr-a1__eyebrow">Rakuten Furusato Nozei</span>
+            <span class="cr-a1__brand">CARDS</span>
+          </div>
+          <div class="cr-a1__bottom">
+            <div class="cr-a1__stat">1,358<span class="cr-a1__stat-unit">%</span></div>
+            <div class="cr-a1__headline">広告費の<em style="color:var(--gold-light);font-style:normal">13.5倍</em>を、寄付額に。</div>
+            <div class="cr-a1__sub">Specialized Operation for Municipalities</div>
+          </div>
         </div>
       </div>
-    </article>
-    <article class="card">
-      <div class="card-image"><img src="assets/ads/ad-02-square-compare.png" alt="業界平均との比較" loading="lazy"></div>
-      <div class="card-meta">
-        <p class="card-title">A2｜Before/After対比型</p>
-        <p class="card-desc">業界平均300〜500% vs CARDS 1,358%。対比で差分の大きさを直感で訴求。</p>
-        <div class="card-spec">
-          <span class="spec spec--fmt">Meta Feed</span>
-          <span class="spec spec--size">1024×1024</span>
-          <a href="assets/ads/ad-02-square-compare.png" download class="dl">↓ DL</a>
+      <div class="ad-card__meta-row">
+        <div class="ad-card__label">A1｜数字主役・ミニマル</div>
+        <div class="ad-card__desc">ゴールドの1,358%を主役に、認知広告として第一想起を最大化。信頼指標が一瞬で伝わるクリーンな構成。</div>
+        <div class="ad-card__chips">
+          <span class="chip chip--fmt">Feed 1:1</span>
+          <span class="chip chip--size">1024×1024</span>
+          <a href="assets/ads/v2-01-number-minimal.png" download class="chip chip--dl">↓ 素材DL</a>
         </div>
       </div>
-    </article>
+    </div>
+
+    <!-- A2 -->
+    <div class="ad-card">
+      <div class="ad-card__preview ad-card__preview--1x1 cr-a2">
+        <img src="assets/ads/v2-02-portrait-manager.png" class="ad-card__bg" alt="">
+        <div class="ad-card__shade"></div>
+        <div class="ad-card__content">
+          <div class="cr-a2__eyebrow">Voices from Municipalities</div>
+          <div class="cr-a2__quote">"</div>
+          <div class="cr-a2__headline">寄付額が読める<br>運用になった。</div>
+          <div class="cr-a2__bottom">
+            <div class="cr-a2__stat-row">
+              <div class="cr-a2__stat">1,358%</div>
+              <div class="cr-a2__stat-label">全体ROAS（広告費対効果）</div>
+            </div>
+            <div class="cr-a2__brand">CARDS｜楽天ふるさと納税 専門運用支援</div>
+          </div>
+        </div>
+      </div>
+      <div class="ad-card__meta-row">
+        <div class="ad-card__label">A2｜証言型（人物ドキュメンタリー）</div>
+        <div class="ad-card__desc">自治体担当者の穏やかな姿と、本人の言葉をそのまま引用。感情を動かす信頼訴求のB2B広告。</div>
+        <div class="ad-card__chips">
+          <span class="chip chip--fmt">Feed 1:1</span>
+          <span class="chip chip--size">1024×1024</span>
+          <a href="assets/ads/v2-02-portrait-manager.png" download class="chip chip--dl">↓ 素材DL</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- ======== 4:5 FEED ======== -->
 <section class="group">
   <div class="group-title">
     <span class="tag">4:5</span>
-    Feed縦長用（1024×1536）
+    <h2>Meta Feed 縦長（1080×1350）</h2>
+    <span class="meta">2 creatives · 1024×1536 base</span>
   </div>
   <div class="grid grid-4x5">
-    <article class="card">
-      <div class="card-image"><img src="assets/ads/ad-03-portrait-food.png" alt="返礼品＋スタンプ訴求" loading="lazy"></div>
-      <div class="card-meta">
-        <p class="card-title">B1｜返礼品訴求型</p>
-        <p class="card-desc">いくら・サーモンの食欲系写真＋ゴールドスタンプ「ROAS 2,000%超」。ふるさと納税領域との関連性を明示。</p>
-        <div class="card-spec">
-          <span class="spec spec--fmt">Meta Feed</span>
-          <span class="spec spec--size">1024×1536</span>
-          <a href="assets/ads/ad-03-portrait-food.png" download class="dl">↓ DL</a>
+
+    <!-- B1 -->
+    <div class="ad-card">
+      <div class="ad-card__preview ad-card__preview--4x5 cr-b1">
+        <img src="assets/ads/v2-03-luxury-food.png" class="ad-card__bg" alt="">
+        <div class="ad-card__shade"></div>
+        <div class="ad-card__content">
+          <span class="cr-b1__top-eyebrow">Furusato Nozei Results</span>
+          <div class="cr-b1__bottom">
+            <div class="cr-b1__stamp"><small>ROAS</small>2,000%超</div>
+            <div class="cr-b1__headline">あなたの返礼品に、<br><em>数字で応える</em>運用を。</div>
+            <div class="cr-b1__cta">
+              <div>
+                <div class="cr-b1__brand">CARDS</div>
+                <span class="cr-b1__brand-sub">楽天ふるさと納税 専門運用支援</span>
+              </div>
+              <div class="cr-b1__arrow">→</div>
+            </div>
+          </div>
         </div>
       </div>
-    </article>
-    <article class="card">
-      <div class="card-image"><img src="assets/ads/ad-04-portrait-testimonial.png" alt="顧客の声" loading="lazy"></div>
-      <div class="card-meta">
-        <p class="card-title">B2｜証言型</p>
-        <p class="card-desc">「寄付額が読める運用になった。」引用＋数字カード。実績のエビデンスを人の言葉で補強。</p>
-        <div class="card-spec">
-          <span class="spec spec--fmt">Meta Feed</span>
-          <span class="spec spec--size">1024×1536</span>
-          <a href="assets/ads/ad-04-portrait-testimonial.png" download class="dl">↓ DL</a>
+      <div class="ad-card__meta-row">
+        <div class="ad-card__label">B1｜返礼品シズル型</div>
+        <div class="ad-card__desc">いくら・サーモンのシネマティック写真で食欲と期待を喚起。ゴールドスタンプで具体的な数字を刻印。</div>
+        <div class="ad-card__chips">
+          <span class="chip chip--fmt">Feed 4:5</span>
+          <span class="chip chip--size">1024×1536</span>
+          <a href="assets/ads/v2-03-luxury-food.png" download class="chip chip--dl">↓ 素材DL</a>
         </div>
       </div>
-    </article>
+    </div>
+
+    <!-- B2 -->
+    <div class="ad-card">
+      <div class="ad-card__preview ad-card__preview--4x5 cr-b2">
+        <img src="assets/ads/v2-04-gold-chart.png" class="ad-card__bg" alt="">
+        <div class="ad-card__shade"></div>
+        <div class="ad-card__content">
+          <div class="cr-b2__top">
+            <span class="cr-b2__label">CARDS Results</span>
+          </div>
+          <div class="cr-b2__center">
+            <div class="cr-b2__multiplier"><span class="cr-b2__mult-prefix">×</span>13.5</div>
+          </div>
+          <div class="cr-b2__bottom">
+            <div class="cr-b2__headline">広告費投資の、<br>寄付額リターン。</div>
+            <div class="cr-b2__brand-line">
+              <span class="cr-b2__brand">CARDS</span>
+              <span class="cr-b2__brand-sub">楽天ふるさと納税 専門運用支援</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ad-card__meta-row">
+        <div class="ad-card__label">B2｜抽象×モダン</div>
+        <div class="ad-card__desc">Apple/Nordic系のミニマル美学。×13.5 の記号的インパクトで金融サービス級の品格を演出。</div>
+        <div class="ad-card__chips">
+          <span class="chip chip--fmt">Feed 4:5</span>
+          <span class="chip chip--size">1024×1536</span>
+          <a href="assets/ads/v2-04-gold-chart.png" download class="chip chip--dl">↓ 素材DL</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+<!-- ======== 9:16 REELS/STORIES ======== -->
 <section class="group">
   <div class="group-title">
     <span class="tag">9:16</span>
-    Reels / Stories用（1024×1536）
+    <h2>Reels / Stories（1080×1920）</h2>
+    <span class="meta">2 creatives · 1024×1536 base</span>
   </div>
   <div class="grid grid-9x16">
-    <article class="card">
-      <div class="card-image"><img src="assets/ads/ad-05-vertical-mobile.png" alt="行動喚起型" loading="lazy"></div>
-      <div class="card-meta">
-        <p class="card-title">C1｜CTA強調型</p>
-        <p class="card-desc">「広告費の13.5倍」の巨大ビジュアル＋赤ボタン「無料相談はこちら」。Reels最初の3秒で訴求完結。</p>
-        <div class="card-spec">
-          <span class="spec spec--fmt">Reels / Stories</span>
-          <span class="spec spec--size">1024×1536</span>
-          <a href="assets/ads/ad-05-vertical-mobile.png" download class="dl">↓ DL</a>
+
+    <!-- C1 -->
+    <div class="ad-card">
+      <div class="ad-card__preview ad-card__preview--9x16 cr-c1">
+        <img src="assets/ads/v2-05-vertical-consultant.png" class="ad-card__bg" alt="">
+        <div class="ad-card__shade"></div>
+        <div class="ad-card__content">
+          <div class="cr-c1__top">
+            <span class="cr-c1__eyebrow">For Municipalities</span>
+          </div>
+          <div class="cr-c1__bottom">
+            <div class="cr-c1__headline">自治体の、<br><em>強い伴走者</em>に。</div>
+            <a class="cr-c1__cta">無料で相談する →</a>
+            <div>
+              <div class="cr-c1__brand">CARDS</div>
+              <span class="cr-c1__brand-sub">楽天ふるさと納税 専門運用支援</span>
+            </div>
+          </div>
         </div>
       </div>
-    </article>
-    <article class="card">
-      <div class="card-image"><img src="assets/ads/ad-06-vertical-story.png" alt="課題提起→解決" loading="lazy"></div>
-      <div class="card-meta">
-        <p class="card-title">C2｜課題提起→解決型</p>
-        <p class="card-desc">「寄付額、伸び悩んでいませんか？」の問い → 下段でROAS 1,358%の解決策。ナラティブ構造。</p>
-        <div class="card-spec">
-          <span class="spec spec--fmt">Reels / Stories</span>
-          <span class="spec spec--size">1024×1536</span>
-          <a href="assets/ads/ad-06-vertical-story.png" download class="dl">↓ DL</a>
+      <div class="ad-card__meta-row">
+        <div class="ad-card__label">C1｜人物×CTA（行動喚起）</div>
+        <div class="ad-card__desc">アスピレーショナルな人物ビジュアル。赤のCTAが親指を止め、即問い合わせに繋げるReels最適化。</div>
+        <div class="ad-card__chips">
+          <span class="chip chip--fmt">Reels 9:16</span>
+          <span class="chip chip--size">1024×1536</span>
+          <a href="assets/ads/v2-05-vertical-consultant.png" download class="chip chip--dl">↓ 素材DL</a>
         </div>
       </div>
-    </article>
+    </div>
+
+    <!-- C2 -->
+    <div class="ad-card">
+      <div class="ad-card__preview ad-card__preview--9x16 cr-c2">
+        <img src="assets/ads/v2-06-countryside.png" class="ad-card__bg" alt="">
+        <div class="ad-card__shade"></div>
+        <div class="ad-card__content">
+          <div class="cr-c2__top">
+            <span class="cr-c2__eyebrow">Furusato · The Hometown</span>
+          </div>
+          <div class="cr-c2__bottom">
+            <div class="cr-c2__headline">ふるさとの魅力を、<br><em>数字で証明する。</em></div>
+            <div class="cr-c2__divider"></div>
+            <div class="cr-c2__brand">CARDS</div>
+            <span class="cr-c2__brand-sub">楽天ふるさと納税 専門運用支援</span>
+          </div>
+        </div>
+      </div>
+      <div class="ad-card__meta-row">
+        <div class="ad-card__label">C2｜感情×土地（ブランディング）</div>
+        <div class="ad-card__desc">ふるさとの風景と共に、セリフ体タイポで情緒的訴求。ブランド認知と深い好意形成のためのStories向け。</div>
+        <div class="ad-card__chips">
+          <span class="chip chip--fmt">Stories 9:16</span>
+          <span class="chip chip--size">1024×1536</span>
+          <a href="assets/ads/v2-06-countryside.png" download class="chip chip--dl">↓ 素材DL</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  生成：gpt-image-1.5（OpenAI）／ 2026-04-19 ／ <a href="./">CARDS LP 本体へ戻る</a>
-  <br><small>※ 1024×1536はMeta推奨9:16（1080×1920）より微細に扱え、Meta広告マネージャー側で自動適合。ヒーロー要素が上下12.5%内に寄っていないかを必ず確認のうえ入稿してください。</small>
+  <div>生成：gpt-image-1.5（OpenAI）× HTMLタイポグラフィ合成 ／ 2026-04-19</div>
+  <div style="margin-top:10px"><a href="./">← CARDS LP 本体へ戻る</a></div>
+  <div style="margin-top:18px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.9">※ プレビュー上の日本語テキストはHTML+CSSで精密オーバーレイしています。実入稿用にはブラウザのスクリーンショット機能（Cmd+Shift+4でフレーム選択）または各画像上のDLリンクから素材を取得し、Photoshop/Figma で仕上げてください。</div>
 </footer>
 
 </div>
