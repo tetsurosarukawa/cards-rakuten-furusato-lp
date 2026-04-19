@@ -328,7 +328,10 @@ strong {
 .header__logo-img {
   height: 28px;
   width: auto;
+  max-width: 160px;
   display: block;
+  align-self: flex-start;
+  object-fit: contain;
 }
 .header__logo-service {
   font-weight: var(--weight-bold);
@@ -1679,8 +1682,11 @@ strong {
 .footer__brand-img {
   height: 28px;
   width: auto;
+  max-width: 160px;
   display: block;
   margin-bottom: 8px;
+  align-self: flex-start;
+  object-fit: contain;
 }
 .footer__brand-tagline {
   color: var(--color-gold);
