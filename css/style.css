@@ -1380,21 +1380,16 @@ strong {
 .section-consultant__photo {
   width: 280px;
   height: 280px;
-  border-radius: 24px;
+  border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 12px 32px rgba(11,31,58,0.18);
   flex-shrink: 0;
-  background: var(--color-navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px 24px;
 }
 .section-consultant__img {
   width: 100%;
-  height: auto;
-  max-width: 200px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 .section-consultant__info {
   padding-top: 12px;
