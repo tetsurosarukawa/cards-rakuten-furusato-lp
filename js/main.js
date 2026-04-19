@@ -1,6 +1,9 @@
 (function () {
   'use strict';
 
+  // Mark as JS-enabled so CSS fallbacks can toggle off
+  document.documentElement.classList.add('js');
+
   // ==========================================================================
   // 1. Mobile navigation toggle
   // ==========================================================================
@@ -50,12 +53,17 @@
   // 3. Header shadow on scroll
   // ==========================================================================
   const header = document.querySelector('.header');
-  if (header) {
+  const ctaFloat = document.querySelector('.cta-float');
+  if (header || ctaFloat) {
     const onScroll = function () {
-      if (window.scrollY > 12) {
-        header.classList.add('is-scrolled');
-      } else {
-        header.classList.remove('is-scrolled');
+      const y = window.scrollY;
+      if (header) {
+        if (y > 12) header.classList.add('is-scrolled');
+        else header.classList.remove('is-scrolled');
+      }
+      if (ctaFloat) {
+        if (y > 600) ctaFloat.classList.add('is-visible');
+        else ctaFloat.classList.remove('is-visible');
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -101,7 +109,7 @@
   // 5. Scroll reveal animation
   // ==========================================================================
   const revealTargets = document.querySelectorAll(
-    '.section-concern__item, .section-reasons__card, .section-services__card, .section-cases__case, .section-flow__step, .section-price__card, .section-consultant__profile, .section-faq__item, .section-about__diagram-item'
+    '.section-concern__item, .section-reasons__card, .section-services__card, .cases-card, .section-flow__step, .section-price__card, .section-consultant__profile, .section-faq__item, .about-diagram__pill, .section-logos__item'
   );
 
   revealTargets.forEach(function (el) {

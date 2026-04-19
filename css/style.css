@@ -2406,3 +2406,218 @@ strong {
   .cases-card__stat-num { font-size: 22px; }
   .cases-card__visual { height: 100px; }
 }
+
+/* =====================================================================
+   TRUST LOGO STRIP (P3) — between hero and concern
+===================================================================== */
+.section-logos {
+  background: var(--color-white);
+  padding: 64px 0 56px 0;
+  border-bottom: 1px solid var(--color-palegray);
+}
+.section-logos__container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: center;
+}
+.section-logos__label {
+  color: var(--color-graytext);
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.section-logos__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.section-logos__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.85;
+  transition: opacity .2s, transform .2s;
+}
+.section-logos__item:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+.section-logos__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-offwhite);
+  border: 2px solid var(--color-palegray);
+  font-family: var(--font-en);
+  font-size: 22px;
+  font-weight: var(--weight-black);
+  color: var(--color-navy);
+  letter-spacing: -0.01em;
+}
+.section-logos__item--dmo .section-logos__mark {
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-color: var(--color-navy);
+}
+.section-logos__item--more .section-logos__more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px dashed var(--color-palegray);
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  color: var(--color-graytext);
+  text-align: center;
+  line-height: 1.25;
+}
+.section-logos__name {
+  font-size: 12px;
+  color: var(--color-graytext);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .section-logos { padding: 40px 0 36px 0; }
+  .section-logos__list { gap: 20px 28px; }
+  .section-logos__mark { width: 52px; height: 52px; font-size: 18px; }
+  .section-logos__item--more .section-logos__more { width: 52px; height: 52px; }
+}
+
+/* =====================================================================
+   CASES BENCHMARK NOTE (P2)
+===================================================================== */
+.section-cases__benchmark {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: rgba(201, 162, 39, 0.1);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 4px;
+  color: rgba(255,255,255,0.92);
+  font-size: 14px;
+  line-height: 1.75;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 900px;
+}
+.section-cases__benchmark strong {
+  color: var(--color-gold);
+  font-weight: var(--weight-xbold);
+}
+.section-cases__benchmark-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+/* =====================================================================
+   FLOW → CTA BRIDGE (P5)
+===================================================================== */
+.section-flow__bridge {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  background: var(--color-white);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section-flow__bridge-text {
+  font-size: 15px;
+  font-weight: var(--weight-xbold);
+  color: var(--color-navy);
+  margin: 0;
+}
+.section-flow__bridge-cta {
+  min-width: 280px;
+}
+
+/* =====================================================================
+   FLOATING CTA — show only after scroll (P6)
+===================================================================== */
+.cta-float {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity .3s ease-out, transform .3s ease-out;
+}
+.cta-float.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* =====================================================================
+   CONCERN EMPHASIS (P7)
+===================================================================== */
+.section-concern__item {
+  border-left-width: 5px;
+}
+.section-concern__icon svg {
+  filter: drop-shadow(0 2px 6px rgba(200,16,46,0.22));
+}
+.section-concern__conclusion {
+  background: linear-gradient(135deg, var(--color-white) 0%, #FFF8EC 100%);
+  font-size: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 12px 36px rgba(201,162,39,0.14);
+  border-top-width: 5px;
+}
+@media (max-width: 768px) {
+  .section-concern__conclusion { font-size: 17px; padding: 22px 20px; }
+}
+
+/* =====================================================================
+   COMPARE TABLE — sticky first column on mobile (P4)
+===================================================================== */
+@media (max-width: 768px) {
+  .section-compare__table-wrap {
+    position: relative;
+  }
+  .section-compare__table {
+    min-width: 560px;
+  }
+  .section-compare__row-label {
+    position: sticky;
+    left: 0;
+    background: var(--color-offwhite);
+    z-index: 2;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.05);
+    min-width: 140px;
+  }
+  .section-logos__container { padding-left: 20px; padding-right: 20px; }
+  .section-logos__list { gap: 20px 16px; }
+}
+
+/* JS無効時のフローティングCTAフォールバック */
+.no-js .cta-float,
+html:not(.js) .cta-float {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
